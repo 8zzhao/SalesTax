@@ -16,17 +16,20 @@
                 <p>You will need a few inputs to make this work properly.  You can delete this comment once you feel you know how many variables you need.</p>
                 <div class="options">
                     <label>Price</label>
-                    <input type="" name="" value=""></input>
+                    <input id="price"type="" name="" value=""></input>
                 </div>
                 <div class="options">
                     <label>Shipping</label><br><br>
-                    <input type="radio" name="shipping" value="standard">Standard</input><br>
-                    <input type="radio" name="shipping" value="Priority">Priority</input><br>
-                    <input type="radio" name="shipping" value="Express">Express</input><br>
+                    <input id = "Shipping">
+                    <select class="" name="">
+                        <option value="standard"></option>
+                        <option value="priority"></option>
+                        <option value="express"></option>
+                    </select>
                 </div>
                 <div class="options">
                     <label>City</label>
-                    <input type="" name="" value="">
+                    <input id = "location" type="" name="" value="">
                 </div>
                 <button onclick="calculate()">Calculate</button>
             </div>
@@ -38,15 +41,12 @@
     <script type="text/javascript">
 
         function calculate(){
-            const doc = document;
+        const doc = document;
 
-
-
-            calculateBTN.addEventListener()
         //Query select your information
-        let price = doc.querySelector('#price');
-        let shippingType =  doc.querySelector('');
-        let shippingLocation = doc.querySelector('');
+        let price = doc.querySelector('#price').value;
+        let shippingType =  doc.querySelector('#Shipping');
+        let shippingLocation = doc.querySelector('#location');
 
         //conditionally choose the shipping tax
         let shippingTax;
@@ -56,7 +56,9 @@
             //think about it
         }
 
+        //step 3 create a totalcost variables
 
+        //step 4 put total cost back in page
 
         }
     </script>
