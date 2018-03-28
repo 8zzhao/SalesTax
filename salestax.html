@@ -16,12 +16,12 @@
                 <p>You will need a few inputs to make this work properly.  You can delete this comment once you feel you know how many variables you need.</p>
                 <div class="options">
                     <label>Price</label>
-                    <input id="price"type="" name="" value=""></input>
+                    <input id="price"type="text" name="" value=""></input>
                 </div>
                 <div class="options">
                     <label>Shipping</label><br><br>
 
-                    <select class="Shipping" name="">
+                    <select id="Shipping" name="">
                         <option value="standard">standard</option>
                         <option value="priority">priority</option>
                         <option value="express">express</option>
@@ -29,7 +29,7 @@
                 </div>
                 <div class="options">
                     <label>City</label>
-                    <input id = "location" type="" name="" value="">
+                    <input id="location" type="text" name="" value="">
                 </div>
                 <button onclick="calculate()">Calculate</button>
             </div>
@@ -44,10 +44,10 @@
         const doc = document;
 
         //Query select your information
-        let price = doc.querySelector('#price').value;
-        let shippingType =  doc.querySelector('#Shipping');
+        let price = Number(doc.querySelector('#price').value);
+        let shippingType =  doc.querySelector('#Shipping').value;
         let type;
-        let shippingLocation = doc.querySelector('#location');
+        let shippingLocation = doc.querySelector('#location').value;
 
         //conditionally choose the shipping tax
         let shippingTax;
@@ -90,7 +90,7 @@
         }
 
 
-        let totalCost = (price * 1.0625) + (type * shippingLocation);//step 3 create a totalcost variables
+        let totalCost = (price * 1.0625) + (type * shippingTax);//step 3 create a totalcost variables
         let answer =doc.querySelector("#answer");
         answer.innerHTML= '$'+ totalCost;
         //step 4 put total cost back in page
